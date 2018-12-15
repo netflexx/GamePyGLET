@@ -1,0 +1,48 @@
+#!/usr/bin/python
+import sys
+import re
+
+def searching_tool(word,file):
+    process_file = open(file,"r")
+    matching_line = dict()
+    count = 0
+    total_line = 0
+    for line in process_file:
+        total_line += 1
+        if word in line.lower():
+            matching_line[total_line] = line.strip()
+    return matching_line
+
+
+def color(highlight):
+    dict = highlight
+    words = []
+    for k,v in dict.items():
+        # print(v)
+        words =
+        print(v)
+
+
+
+def main():
+    input = sys.argv
+
+    if(len(input) == 3):
+        print('MODE 3')
+        word = input[1]
+        file = input[2]
+        print(word,file)
+
+        matching_line = searching_tool(word,file)
+        color(matching_line)
+
+        # print(matching_line)
+        # number_for_lines(matching_line)
+
+    if(len(input) == 4):   #CHECK FOR FUNCTION MODE
+        print('MODE 4')
+        if(input[1] == '--case-sensitive'):
+            mode = 1
+
+
+main()
